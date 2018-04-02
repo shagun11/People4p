@@ -89,6 +89,8 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Email Already Exists", Toast.LENGTH_SHORT).show();
+                    _signupButton.setEnabled(true);
+                    return;
                 }
             }
         }
