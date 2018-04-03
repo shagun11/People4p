@@ -15,10 +15,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SignupActivity extends AppCompatActivity {
+    DatabaseHelper myDb;
     private static final String TAG = "SignupActivity";
 
     @BindView(R.id.input_name) EditText _nameText;
-    @BindView(R.id.input_address) EditText _addressText;
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_mobile) EditText _mobileText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -28,6 +28,7 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        myDb = new DatabaseHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.bind(this);
@@ -47,6 +48,7 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+
             }
         });
     }
@@ -68,14 +70,30 @@ public class SignupActivity extends AppCompatActivity {
         progressDialog.show();
 
         String name = _nameText.getText().toString();
-        String address = _addressText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
 
         // TODO: Implement your own signup logic here.
-
+        if(name.equals("") || email.equals("") || mobile.equals("") || password.equals("") || reEnterPassword.equals("")) {
+            Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+        } else{
+            if(password.equals(reEnterPassword)) {
+                Boolean checkemail = myDb.checkEmail(email);
+                if(checkemail) {
+                    Boolean insert = myDb.insert(name, email, mobile, password);
+                    if(insert) {
+                        Toast.makeText(getApplicationContext(), "Registered successfully",Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Email Already Exists", Toast.LENGTH_SHORT).show();
+                    _signupButton.setEnabled(true);
+                    return;
+                }
+            }
+        }
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
@@ -105,7 +123,6 @@ public class SignupActivity extends AppCompatActivity {
         boolean valid = true;
 
         String name = _nameText.getText().toString();
-        String address = _addressText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
@@ -116,13 +133,6 @@ public class SignupActivity extends AppCompatActivity {
             valid = false;
         } else {
             _nameText.setError(null);
-        }
-
-        if (address.isEmpty()) {
-            _addressText.setError("Enter Valid Address");
-            valid = false;
-        } else {
-            _addressText.setError(null);
         }
 
 

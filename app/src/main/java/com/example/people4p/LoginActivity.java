@@ -18,16 +18,10 @@ import butterknife.ButterKnife;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity {
+    DatabaseHelper myDb;
 
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
 
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -37,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        myDb = new DatabaseHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -81,7 +76,16 @@ public class LoginActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // TODO: Implement your own authentication logic here.
+        // authentication logic here.
+        boolean checkEmailPass = myDb.matchEmailPass(email, password);
+        if(checkEmailPass) {
+            Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Wrong email or password", Toast.LENGTH_SHORT).show();
+            _loginButton.setEnabled(true);
+            return;
+        }
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
