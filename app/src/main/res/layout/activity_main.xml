@@ -76,7 +76,7 @@
         app:srcCompat="@android:drawable/checkbox_on_background" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/timeDone"
         android:layout_width="330dp"
         android:layout_height="29dp"
         android:layout_marginEnd="8dp"
@@ -92,6 +92,6 @@
         android:layout_height="29dp"
         android:text="Due Date"
         app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/timeDone" />
 
 </RelativeLayout>

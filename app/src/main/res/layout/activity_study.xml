@@ -7,10 +7,11 @@
     tools:context=".StudyActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/goToBreakButton"
         style="@android:style/Widget.Button"
         android:layout_width="141dp"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="132dp"
@@ -21,17 +22,21 @@
         android:textAppearance="@android:style/TextAppearance"
         android:typeface="normal"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/endSessionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/timeDone"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/endSessionButton"
         style="@android:style/Widget.Button"
-        android:layout_width="wrap_content"
+        android:layout_width="139dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:text="End Session"
         android:textAppearance="@android:style/TextAppearance"
@@ -39,13 +44,13 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/goToBreakButton"
         app:layout_constraintVertical_bias="0.511" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/timeDone"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
         android:layout_marginEnd="8dp"
@@ -85,8 +90,8 @@
 
     <TextView
         android:id="@+id/timer"
-        android:layout_width="184dp"
-        android:layout_height="126dp"
+        android:layout_width="188dp"
+        android:layout_height="92dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
@@ -94,7 +99,7 @@
         android:text="TextView"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance"
-        android:textSize="36sp"
+        android:textSize="75sp"
         android:typeface="normal"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
