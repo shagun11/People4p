@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    //danny was here
 
 }
 
