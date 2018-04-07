@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +28,9 @@ public class BreakActivity extends AppCompatActivity {
     //Clock text for countdown
     TextView clockText;
 
+    //text for done time on break
+    TextView doneText;
+
 
 
     @Override
@@ -33,7 +38,7 @@ public class BreakActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_break);
         clockText = (TextView) findViewById(R.id.timeLeftText);
-        //doneText = (TextView) findViewById(R.id.timeDone);
+        doneText = (TextView) findViewById(R.id.textDoneBreak);
         MakeRecylerStuff();
         startTimer();
         Button EndBreakButton = (Button) findViewById(R.id.EndBreakButton);
@@ -120,12 +125,15 @@ public class BreakActivity extends AppCompatActivity {
 
         timer.start();
 
-        int hourInt = Calendar.HOUR;
-        int minuteInt = Calendar.MINUTE;
+        Date date = new Date();   // given date
+        Calendar calendar = GregorianCalendar.getInstance();
 
-        String doneAt = "Done at: " + Integer.toString(hourInt) + ":" + Integer.toString(minuteInt + 10);
+        int hourInt = calendar.get(Calendar.HOUR);
+        int minuteInt = calendar.get(Calendar.MINUTE);
 
-        //doneText.setText(doneAt);
+        String doneAt = "Done at: " + Integer.toString(hourInt) + ":" + Integer.toString(minuteInt + 1);
+
+        doneText.setText(doneAt);
 
 
     }
