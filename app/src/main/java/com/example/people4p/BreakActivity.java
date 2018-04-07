@@ -69,7 +69,7 @@ public class BreakActivity extends AppCompatActivity {
         productList.add(
                 new BreakItem(
                         "Resource: ",
-                        "Kenneth Keller Hall offers many facilities to use Linux machines."
+                        "Kenneth Keller Hall offers many rooms that have multiple Linux machines open to students with CSE accounts."
                 ));
 
         productList.add(

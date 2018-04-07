@@ -25,10 +25,13 @@
             android:name=".StudyActivity"
             android:exported="true" />
         <activity
+            android:name=".MakeAssignmentActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".BreakActivity"></activity>
+        <activity android:name=".BreakActivity" />
     </application>
 
 </manifest>
