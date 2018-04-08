@@ -25,6 +25,9 @@
             android:name=".StudyActivity"
             android:exported="true" />
         <activity
+            android:name=".MakeAssignmentActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".SignupActivity" />
@@ -32,6 +35,7 @@
             android:name=".FinishedStudyScreen"
             android:label="@string/title_activity_finished_study_screen"
             android:exported="true"/>
+        <activity android:name=".BreakActivity" />
     </application>
 
 </manifest>
