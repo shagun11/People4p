@@ -24,8 +24,6 @@
             android:label="Login" />
         <activity android:name=".SignupActivity"> </activity>
         <activity android:name=".BreakActivity"></activity>
-
-
     </application>
 
 </manifest>
