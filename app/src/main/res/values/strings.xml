@@ -14,6 +14,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_finished_study_screen">FinishedStudyScreen</string>
     <string name="duration">Duration</string>
     <string name="todo">TODO</string>
     <string name="description">Description</string>
