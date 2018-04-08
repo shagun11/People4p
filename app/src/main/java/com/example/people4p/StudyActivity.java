@@ -3,16 +3,24 @@ package com.example.people4p;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import java.util.Calendar;
+import android.content.Intent;
+import java.util.Date;
+import java.sql.Time;
 
 
+import java.util.GregorianCalendar;
 import java.util.concurrent.TimeUnit;
 
 public class StudyActivity extends AppCompatActivity {
 
     private TextView clockText;
     private TextView timeDoneText;
+    private Button goToBreakButton;
+    private CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +28,19 @@ public class StudyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_study);
         clockText = (TextView) findViewById(R.id.timer);
         timeDoneText = (TextView) findViewById(R.id.timeDone);
+        goToBreakButton = (Button) findViewById(R.id.goToBreakButton);
+        goToBreakButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goToBreak();
+            }
+        });
         startTimer();
     }
 
     private void startTimer() {
         clockText.setText("00:00");
 
-        CountDownTimer timer = new CountDownTimer(10 * 1000 * 60, 1000) {
+        timer = new CountDownTimer( 1000 * 60, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -55,22 +69,50 @@ public class StudyActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                //@TODO Move to break
+                clockText.setText("Done!");
             }
         };
 
         timer.start();
 
-        int hourInt = Calendar.HOUR;
-        int minuteInt = Calendar.MINUTE;
+        Date date = new Date();   // given date
+        Calendar calendar = GregorianCalendar.getInstance();
 
-        String doneAt = "Done at: " + Integer.toString(hourInt) + ":" + Integer.toString(minuteInt + 10);
+        int hourInt = calendar.get(Calendar.HOUR);
+        int minuteInt = calendar.get(Calendar.MINUTE) +1;
+
+        String hoursString = "";
+        String minutesString = "";
+
+        if (minuteInt < 10) {
+            minutesString = "0" + Integer.toString(minuteInt);
+        } else {
+            minutesString = Integer.toString(minuteInt);
+        }
+
+        if (hourInt < 10) {
+            hoursString = "0" + Integer.toString(hourInt);
+        } else {
+            hoursString = Integer.toString(hourInt);
+        }
+
+        String doneAt = "Done at: " + hoursString + ":" + minutesString;
 
         timeDoneText.setText(doneAt);
 
 
     }
 
+    public void goToBreak() {
+        Intent intent = new Intent(this, BreakActivity.class);
+        startActivity(intent);
+    }
 
 
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        timer.start();
+    }
 }

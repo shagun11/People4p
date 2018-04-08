@@ -129,11 +129,27 @@ public class BreakActivity extends AppCompatActivity {
         Calendar calendar = GregorianCalendar.getInstance();
 
         int hourInt = calendar.get(Calendar.HOUR);
-        int minuteInt = calendar.get(Calendar.MINUTE);
+        int minuteInt = calendar.get(Calendar.MINUTE) +1;
 
-        String doneAt = "Done at: " + Integer.toString(hourInt) + ":" + Integer.toString(minuteInt + 1);
+        String hoursString = "";
+        String minutesString = "";
+
+        if (minuteInt < 10) {
+            minutesString = "0" + Integer.toString(minuteInt);
+        } else {
+            minutesString = Integer.toString(minuteInt);
+        }
+
+        if (hourInt < 10) {
+            hoursString = "0" + Integer.toString(hourInt);
+        } else {
+            hoursString = Integer.toString(hourInt);
+        }
+
+        String doneAt = "Done at: " + hoursString + ":" + minutesString;
 
         doneText.setText(doneAt);
+
 
 
     }
