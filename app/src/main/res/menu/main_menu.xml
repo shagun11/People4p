@@ -10,7 +10,7 @@
         android:id="@+id/bbn_item1"
         android:color="@color/color_pink"
         android:icon="@drawable/book"
-        android:title="Resources" />
+        android:title="Study" />
     <item
         android:id="@+id/bbn_item3"
         android:color="@android:color/holo_orange_dark"

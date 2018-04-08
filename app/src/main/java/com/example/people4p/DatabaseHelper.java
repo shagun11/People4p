@@ -71,15 +71,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String description = cursor.getString(cursor.getColumnIndex("description"));
                 int duration = cursor.getInt(cursor.getColumnIndex("duration"));
                 Tasks task = new Tasks(description, duration);
-//                task.setDescription(description);
-//                task.setDuration(duration);
-
                 tasksList.add(task);
             }while(cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return tasksList;
+    }
+
+
+    public void deletePersonRecord(String desc, Context context) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM tasks WHERE description='"+desc+"'");
+
     }
 
     //checking if email already exists

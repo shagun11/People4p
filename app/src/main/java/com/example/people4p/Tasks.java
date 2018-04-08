@@ -7,6 +7,17 @@ package com.example.people4p;
 public class Tasks {
     private String description;
     private int duration;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
+
     public Tasks(String description, int duration) {
         this.description = description;
         this.duration = duration;
