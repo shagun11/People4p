@@ -3,41 +3,42 @@ package com.example.people4p;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.LinearLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    DatabaseHelper dbHelper;
+    List<Tasks> taskList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbHelper = new DatabaseHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+//        Intent intent = new Intent(this, LoginActivity.class);
+//        startActivity(intent);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //initializing the productlist
+        taskList = new ArrayList<>();
+        taskList = dbHelper.getTasks();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //creating recyclerview adapter
+        TaskAdapter adapter = new TaskAdapter(this, taskList);
 
-        return super.onOptionsItemSelected(item);
+        //setting adapter to recyclerview
+        recyclerView.setAdapter(adapter);
+
     }
-    //danny was here
 
 }
-

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#f44682</color>
+    <color name="colorPrimaryDark">#f16559</color>
+    <color name="colorAccent">#ee7ca3</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
@@ -12,5 +12,7 @@
     <color name="aluminum">#999999</color>
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="color_pink">#f44682</color>
+    <color name="color_teal">#1da37f</color>
 </resources>
