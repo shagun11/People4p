@@ -20,6 +20,7 @@ public class StudyActivity extends AppCompatActivity {
     private TextView clockText;
     private TextView timeDoneText;
     private Button goToBreakButton;
+    private Button endSessionButton;
     private CountDownTimer timer;
 
     @Override
@@ -32,6 +33,12 @@ public class StudyActivity extends AppCompatActivity {
         goToBreakButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 goToBreak();
+            }
+        });
+        endSessionButton = (Button) findViewById(R.id.goToBreakButton);
+        endSessionButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                endSession();
             }
         });
         startTimer();
@@ -104,6 +111,11 @@ public class StudyActivity extends AppCompatActivity {
     }
 
     public void goToBreak() {
+        Intent intent = new Intent(this, BreakActivity.class);
+        startActivity(intent);
+    }
+
+    public void endSession() {
         Intent intent = new Intent(this, BreakActivity.class);
         startActivity(intent);
     }
