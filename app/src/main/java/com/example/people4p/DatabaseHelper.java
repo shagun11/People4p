@@ -50,7 +50,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("description", description);
         cv.put("duration", duration);
-//        cv.put("user_id", user_id);
         long ins = db.insert("tasks", null, cv);
         db.close();
         if(ins == -1) return false;
@@ -58,6 +57,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Tasks> getTasks() {
+        insertTask("Task4", 50);
+        insertTask("Task5", 20);
+        insertTask("Task6", 10);
         String[] columns = {
                 "description",
                 "duration"
