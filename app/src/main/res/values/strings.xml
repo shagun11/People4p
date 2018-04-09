@@ -14,4 +14,11 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!--Strings related to profile editing-->
+    <string name="user_name"></string>
+    <string name="user_school"></string>
+    <string name="user_major"></string>
+    <string name="user_email"></string>
+    <string name="user_phone"></string>
 </resources>
