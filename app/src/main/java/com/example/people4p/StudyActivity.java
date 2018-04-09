@@ -35,7 +35,7 @@ public class StudyActivity extends AppCompatActivity {
                 goToBreak();
             }
         });
-        endSessionButton = (Button) findViewById(R.id.goToBreakButton);
+        endSessionButton = (Button) findViewById(R.id.endSessionButton);
         endSessionButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 endSession();
@@ -116,7 +116,7 @@ public class StudyActivity extends AppCompatActivity {
     }
 
     public void endSession() {
-        Intent intent = new Intent(this, BreakActivity.class);
+        Intent intent = new Intent(this, FinishedStudyScreen.class);
         startActivity(intent);
     }
 
