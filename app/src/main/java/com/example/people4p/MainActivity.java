@@ -78,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Study Action clicked", Toast.LENGTH_LONG).show();
             return true;
         } else if (id == R.id.nav_profile){
-            Toast.makeText(MainActivity.this, "Add Action clicked", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Profile Screen clicked", Toast.LENGTH_LONG).show();
             return true;
         } else if (id == R.id.nav_cal) {
-            Toast.makeText(MainActivity.this, "Profile Screen clicked", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Calendar Action clicked", Toast.LENGTH_LONG).show();
             return true;
         }
 
