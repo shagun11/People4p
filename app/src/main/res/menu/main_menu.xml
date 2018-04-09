@@ -2,9 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:bbn_itemColorActive="#FFFFFFFF"
-    app:bbn_itemColorInactive="#7FFFFFFF"
-    app:bbn_badgeColor="#FFCC0000"
-    app:bbn_rippleColor="#99FFFFFF">
+    app:bbn_itemColorInactive="#7FFFFFFF">
 
     <item
         android:id="@+id/bbn_item1"
