@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graylight"
+    android:orientation="vertical"
+    tools:context="com.example.people4p.ProfileEdit">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/startblue"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:text="Profile Update"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<ImageView-->
+            <!--android:layout_width="34dp"-->
+            <!--android:layout_height="34dp"-->
+            <!--android:src="@drawable/ic_school_black_24dp"-->
+            <!--/>-->
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/startblue"/>
+
+            <EditText
+                android:id="@+id/input_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/graylight"
+                android:ems="12"
+                android:inputType="text"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#AAAAAA"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="School"
+                android:textColor="@color/startblue"/>
+
+            <EditText
+                android:id="@+id/input_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/graylight"
+                android:inputType="text"
+                android:ems="12"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#AAAAAA"
+            />
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<ImageView-->
+            <!--android:layout_width="34dp"-->
+            <!--android:layout_height="34dp"-->
+            <!--android:src="@drawable/ic_bookmark_border_black_24dp"-->
+            <!--/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Major"
+                android:textColor="@color/startblue"/>
+
+            <EditText
+                android:id="@+id/input_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/graylight"
+                android:inputType="text"
+                android:ems="12"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#AAAAAA"
+            />
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<ImageView-->
+            <!--android:layout_width="34dp"-->
+            <!--android:layout_height="34dp"-->
+            <!--android:src="@drawable/ic_email_black_24dp"-->
+            <!--/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/startblue"/>
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/graylight"
+                android:inputType="textEmailAddress"
+                android:ems="12"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#AAAAAA"
+            />
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<ImageView-->
+            <!--android:layout_width="34dp"-->
+            <!--android:layout_height="34dp"-->
+            <!--android:src="@drawable/ic_phone_android_black_24dp"-->
+            <!--/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/startblue"/>
+
+            <EditText
+                android:id="@+id/input_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/graylight"
+                android:inputType="phone"
+                android:ems="12"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="#AAAAAA"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="58dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/editbuttonstyle"
+        android:ellipsize="middle"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:onClick="saveProfile"/>
+
+</LinearLayout>
+

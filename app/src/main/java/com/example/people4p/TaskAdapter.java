@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -15,6 +16,17 @@ import android.widget.TextView;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
     private List<Tasks> listTasks;
     private Context mContext;
+    private OnItemClickListener mListener;
+    DatabaseHelper dbHelper;
+
+
+    public interface OnItemClickListener {
+        void onDeleteClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public TaskAdapter(Context context, List<Tasks>listTasks) {
         this.listTasks = listTasks;
@@ -25,11 +37,29 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public class TaskViewHolder extends RecyclerView.ViewHolder {
          TextView description;
          TextView duration;
-        public TaskViewHolder(View view) {
+         public ImageButton mdelButton;
+
+
+        public TaskViewHolder(View view, final OnItemClickListener listener) {
             super(view);
             description = (TextView) view.findViewById(R.id.description);
             duration = (TextView) view.findViewById(R.id.duration);
+            mdelButton = (ImageButton) view.findViewById(R.id.delButton);
+            mdelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    dbHelper = new DatabaseHelper(mContext);
+                    Tasks task = listTasks.get(position);
+                    dbHelper.deletePersonRecord(task.getDescription(), mContext);
+                    if(listener != null){
+                        if(position != RecyclerView.NO_POSITION) {
+                            listener.onDeleteClick(position);
 
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -40,15 +70,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.item_layout, null);
-        return new TaskViewHolder(view);
+        return new TaskViewHolder(view, mListener);
     }
 
 
     @Override
-    public void onBindViewHolder(TaskAdapter.TaskViewHolder holder, int position) {
+    public void onBindViewHolder(TaskAdapter.TaskViewHolder holder, final int position) {
 
         holder.description.setText(listTasks.get(position).getDescription());
         holder.duration.setText(String.valueOf(listTasks.get(position).getDuration()));
+
+
     }
 
     @Override

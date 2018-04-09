@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -50,7 +50,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("description", description);
         cv.put("duration", duration);
-//        cv.put("user_id", user_id);
         long ins = db.insert("tasks", null, cv);
         db.close();
         if(ins == -1) return false;
@@ -58,6 +57,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Tasks> getTasks() {
+
+//        insertTask("Task4", 50);
+//        insertTask("Task5", 20);
+//        insertTask("Task6", 10);
+
+
         String[] columns = {
                 "description",
                 "duration"
@@ -71,15 +76,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String description = cursor.getString(cursor.getColumnIndex("description"));
                 int duration = cursor.getInt(cursor.getColumnIndex("duration"));
                 Tasks task = new Tasks(description, duration);
-//                task.setDescription(description);
-//                task.setDuration(duration);
-
                 tasksList.add(task);
             }while(cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return tasksList;
+    }
+
+
+    public void deletePersonRecord(String desc, Context context) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM tasks WHERE description='"+desc+"'");
+
     }
 
     //checking if email already exists

@@ -15,7 +15,25 @@
         completions."
     </string>
     <string name="title_activity_finished_study_screen">FinishedStudyScreen</string>
+
+    <!--Strings related to profile editing-->
+    <string name="user_name"></string>
+    <string name="user_school"></string>
+    <string name="user_major"></string>
+    <string name="user_email"></string>
+    <string name="user_phone"></string>
     <string name="duration">Duration</string>
     <string name="todo">TODO</string>
     <string name="description">Description</string>
+
+
+    <!--Strings for navigation bar-->
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="profile_pic">profile_pic</string>
+    <string name="leonardo_dicaprio">Leonardo Dicaprio</string>
 </resources>

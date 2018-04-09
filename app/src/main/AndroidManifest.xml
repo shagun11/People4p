@@ -31,6 +31,14 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".SignupActivity" />
+        <activity android:name=".ProfileEdit" />
+        <activity android:name=".calendarActivity" />
+        <!-- <activity android:name=".SignupActivity"/> -->
+        <activity android:name=".BreakActivity" />
+        <activity android:name=".ProfileScreen" />
+        <activity android:name=".NavigationActivity"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".SignupActivity" />
         <activity
             android:name=".FinishedStudyScreen"
             android:label="@string/title_activity_finished_study_screen"
