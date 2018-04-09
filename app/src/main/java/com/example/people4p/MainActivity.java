@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
         mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(mTopToolbar);
 
-
-
-
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
