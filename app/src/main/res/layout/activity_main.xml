@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.people4p.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/HeaderBar"
+        android:elevation="4dp"/>
+        <!--app:theme="@style/ActionBarThemeOverlay"-->
+        <!--app:popupTheme="@style/ActionBarPopupThemeOverlay"-->
+
 
     <LinearLayout
         android:id="@+id/profile"
@@ -70,6 +81,5 @@
             android:elevation="3dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true" />
-
     </RelativeLayout>
 </LinearLayout>
