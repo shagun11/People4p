@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/graylight"
     android:orientation="vertical"
-    tools:context="com.example.people4p.MainActivity">
+    tools:context="com.example.people4p.ProfileScreen">
 
     <RelativeLayout
         android:layout_width="match_parent"

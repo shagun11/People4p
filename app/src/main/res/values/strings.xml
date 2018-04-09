@@ -21,4 +21,7 @@
     <string name="user_major"></string>
     <string name="user_email"></string>
     <string name="user_phone"></string>
+    <string name="duration">Duration</string>
+    <string name="todo">TODO</string>
+    <string name="description">Description</string>
 </resources>

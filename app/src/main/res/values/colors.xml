@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorPrimaryDarkTwo">#292b3d</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--<color name="colorPrimary">#f44682</color>-->
+    <!--<color name="colorPrimaryDark">#f16559</color>-->
+    <!--<color name="colorAccent">#ee7ca3</color>-->
+
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
@@ -17,4 +22,6 @@
     <color name="startblue">#09c6df</color>
     <color name="endblue">#0bcce6</color>
 
+    <color name="color_pink">#f44682</color>
+    <color name="color_teal">#1da37f</color>
 </resources>

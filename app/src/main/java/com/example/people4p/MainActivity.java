@@ -1,76 +1,51 @@
 package com.example.people4p;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.CalendarView;
-import android.widget.TextView;
-import android.widget.Button;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.LinearLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    DatabaseHelper dbHelper;
+    List<Tasks> taskList;
 
-    CalendarView calendarView;
-    TextView myDate;
-    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbHelper = new DatabaseHelper(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_main);
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        prefs = getSharedPreferences("MY_DATA", MODE_PRIVATE);
+        //initializing the productlist
+        taskList = new ArrayList<>();
+        taskList = dbHelper.getTasks();
 
-        String name = prefs.getString("MY_NAME", "no user name");
-        String school = prefs.getString("MY_SCHOOL", "no school name");
-        String major = prefs.getString("MY_MAJOR", "no major");
-        String email = prefs.getString("MY_EMAIL", "no email");
-        int phonenumber = prefs.getInt("MY_PHONE", 0);
+        //creating recyclerview adapter
+        final TaskAdapter adapter = new TaskAdapter(this, taskList);
+        adapter.setOnItemClickListener(new TaskAdapter.OnItemClickListener() {
+            @Override
+            public void onDeleteClick(int position) {
+                taskList.remove(position);
+                adapter.notifyItemRemoved(position);
+            }
+        });
 
-        ((TextView)findViewById(R.id.user_name)).setText(name);
-        ((TextView)findViewById(R.id.user_school)).setText(school);
-        ((TextView)findViewById(R.id.user_major)).setText(major);
-        ((TextView)findViewById(R.id.user_email)).setText(email);
-        ((TextView)findViewById(R.id.user_phonenumber)).setText(phonenumber+"");
+        //setting adapter to recyclerview
+        recyclerView.setAdapter(adapter);
 
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-
-    }
-
-    public void editProfile(View view) {
-        startActivity(new Intent(getApplicationContext(), ProfileEdit.class));
-//        Intent intent = new Intent(this, ProfileEdit.class);
-//        startActivity(intent);
     }
 
 }
-

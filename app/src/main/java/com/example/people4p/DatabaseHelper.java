@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "P4p.db";
@@ -16,12 +19,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table user (name text, email text primary key, mobile text, password text)");
+        db.execSQL("create table user (id integer primary key autoincrement, name text, " +
+                "email text, mobile text, password text)");
+        db.execSQL("create table tasks (description text, id integer primary key autoincrement, " +
+                "duration integer)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS user");
+        db.execSQL("DROP TABLE IF EXISTS tasks");
         onCreate(db);
     }
 
@@ -36,6 +43,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long ins = db.insert("user", null, cv);
         if(ins == -1) return false;
         else return true;
+    }
+
+    public boolean insertTask(String description, Integer duration) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("description", description);
+        cv.put("duration", duration);
+        long ins = db.insert("tasks", null, cv);
+        db.close();
+        if(ins == -1) return false;
+        else return true;
+    }
+
+    public ArrayList<Tasks> getTasks() {
+//        insertTask("Task4", 50);
+//        insertTask("Task5", 20);
+//        insertTask("Task6", 10);
+        String[] columns = {
+                "description",
+                "duration"
+        };
+        ArrayList<Tasks> tasksList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from tasks", null);
+        if(cursor.moveToFirst()) {
+
+            do {
+                String description = cursor.getString(cursor.getColumnIndex("description"));
+                int duration = cursor.getInt(cursor.getColumnIndex("duration"));
+                Tasks task = new Tasks(description, duration);
+                tasksList.add(task);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return tasksList;
+    }
+
+
+    public void deletePersonRecord(String desc, Context context) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM tasks WHERE description='"+desc+"'");
+
     }
 
     //checking if email already exists
