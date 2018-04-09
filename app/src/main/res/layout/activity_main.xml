@@ -70,7 +70,6 @@
         app:bbn_entries="@menu/main_menu"
         app:bbn_scrollEnabled="true"
         app:layout_behavior="@string/bbn_phone_view_behavior" />
->>>>>>> 563b7ef01f736832c4863e2958f8f1ec8873de4a
 
     </RelativeLayout>
 </LinearLayout>
