@@ -17,4 +17,5 @@
     <string name="duration">Duration</string>
     <string name="todo">TODO</string>
     <string name="description">Description</string>
+    <string name="profile_pic">profile_pic</string>
 </resources>
