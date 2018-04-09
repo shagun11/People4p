@@ -27,7 +27,8 @@
         <activity android:name=".calendarActivity" />
         <!-- <activity android:name=".SignupActivity"/> -->
         <activity android:name=".BreakActivity" />
-        <activity android:name=".ProfileScreen"></activity>
+        <activity android:name=".ProfileScreen" />
+        <activity android:name=".NavigationActivity"></activity>
     </application>
 
 </manifest>
