@@ -48,16 +48,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             mdelButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    dbHelper = new DatabaseHelper(mContext);
-                    Tasks task = listTasks.get(position);
-                    dbHelper.deletePersonRecord(task.getDescription(), mContext);
-                    if(listener != null){
-                        if(position != RecyclerView.NO_POSITION) {
-                            listener.onDeleteClick(position);
+                int position = getAdapterPosition();
+                dbHelper = new DatabaseHelper(mContext);
+                Tasks task = listTasks.get(position);
+                dbHelper.deletePersonRecord(task.getDescription(), mContext);
+                if(listener != null){
+                    if(position != RecyclerView.NO_POSITION) {
+                        listener.onDeleteClick(position);
 
-                        }
                     }
+                }
                 }
             });
         }
