@@ -70,7 +70,7 @@ public class ProfileEdit extends AppCompatActivity {
         editor.putInt("MY_PHONE", phonenumber);
         editor.apply();
 
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), ProfileScreen.class));
 
     }
 }
