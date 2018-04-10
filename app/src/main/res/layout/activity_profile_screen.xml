@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="235dp"
-            android:background="@drawable/gradientbackground"
+            android:background="@drawable/gradient"
             android:orientation="vertical">
 
             <Button
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="School"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_school"
@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Major"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_major"
@@ -268,7 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_email"
@@ -302,7 +302,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_phonenumber"
