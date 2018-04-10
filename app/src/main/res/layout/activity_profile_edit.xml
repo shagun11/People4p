@@ -2,7 +2,6 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="@color/startblue"
+            android:background="@drawable/gradient"
             android:layout_height="60dp">
 
             <TextView
@@ -48,18 +47,12 @@
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <!--<ImageView-->
-            <!--android:layout_width="34dp"-->
-            <!--android:layout_height="34dp"-->
-            <!--android:src="@drawable/ic_school_black_24dp"-->
-            <!--/>-->
-
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textColor="@color/startblue"/>
+                android:textColor="#ee7ca3"/>
 
             <EditText
                 android:id="@+id/input_name"
@@ -92,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="School"
-                android:textColor="@color/startblue"/>
+                android:textColor="#ee7ca3"/>
 
             <EditText
                 android:id="@+id/input_school"
@@ -129,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Major"
-                android:textColor="@color/startblue"/>
+                android:textColor="#ee7ca3"/>
 
             <EditText
                 android:id="@+id/input_major"
@@ -164,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:textColor="@color/startblue"/>
+                android:textColor="#ee7ca3"/>
 
             <EditText
                 android:id="@+id/input_email"
@@ -199,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone"
-                android:textColor="@color/startblue"/>
+                android:textColor="#ee7ca3"/>
 
             <EditText
                 android:id="@+id/input_phone"
@@ -228,11 +221,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/editbuttonstyle"
-        android:ellipsize="middle"
-        android:text="Save"
-        android:textColor="@color/white"
         android:clickable="true"
-        android:onClick="saveProfile"/>
+        android:ellipsize="middle"
+        android:onClick="saveProfile"
+        android:text="Save"
+        android:textColor="@color/white" />
 
 </LinearLayout>
 

@@ -17,4 +17,8 @@ public class calendarActivity extends AppCompatActivity {
     public void getBack(View view) {
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
+
+//    public void changeScreen(View view) {
+//        startActivity(new Intent(getApplicationContext(), AddEventActivity.class));
+//    }
 }

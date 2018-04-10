@@ -14,35 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".LoginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".StudyActivity"
             android:exported="true" />
         <activity
             android:name=".MakeAssignmentActivity"
             android:exported="true" />
-
-
         <activity android:name=".SignupActivity" />
         <activity android:name=".ProfileEdit" />
         <activity android:name=".calendarActivity" />
         <activity android:name=".BreakActivity" />
         <activity android:name=".ProfileScreen" />
-        <activity android:name=".NavigationActivity"/>
+        <activity android:name=".NavigationActivity" />
         <activity
             android:name=".FinishedStudyScreen"
-            android:label="@string/title_activity_finished_study_screen"
-            android:exported="true"/>
+            android:exported="true"
+            android:label="@string/title_activity_finished_study_screen" />
+        <activity android:name=".TaskActivity" />
     </application>
 
 </manifest>

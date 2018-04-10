@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="235dp"
-            android:background="@drawable/gradientbackground"
+            android:background="@drawable/gradient"
             android:orientation="vertical">
 
 
@@ -28,7 +28,7 @@
                 android:layout_height="29dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="140dp"
                 android:background="@drawable/editbuttonstyle"
                 android:ellipsize="middle"
                 android:text="Edit"
@@ -127,7 +127,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startblue"/>
+                        android:textColor="@color/colorPrimaryDark"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -150,7 +150,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startblue"/>
+                        android:textColor="@color/colorPrimaryDark"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -173,7 +173,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:paddingTop="10dp"
-                        android:textColor="@color/startblue"/>
+                        android:textColor="@color/colorPrimaryDark"/>
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -201,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="School"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_school"
@@ -236,7 +236,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Major"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_major"
@@ -270,7 +270,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_email"
@@ -304,7 +304,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone"
-                android:textColor="@color/startblue"/>
+                android:textColor="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/user_phonenumber"

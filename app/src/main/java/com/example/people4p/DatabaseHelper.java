@@ -58,11 +58,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ArrayList<Tasks> getTasks() {
 
-        insertTask("Task4", 50);
-        insertTask("Task5", 20);
-        insertTask("Task6", 10);
-
-
         String[] columns = {
                 "description",
                 "duration"

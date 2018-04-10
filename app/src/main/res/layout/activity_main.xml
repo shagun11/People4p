@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_circle"
             android:elevation="3dp"
+            android:onClick="activityTask"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
