@@ -8,7 +8,12 @@
     android:id="@+id/mainnav"
     tools:context="com.example.people4p.NavigationActivity">
     
-    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flcontent">
+    </FrameLayout>
+
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
@@ -22,6 +27,7 @@
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/main_nav"
         app:menu="@menu/main_nav"
         android:layout_gravity="start">
     </android.support.design.widget.NavigationView>

@@ -1,6 +1,19 @@
 package com.example.people4p;
 
 import android.content.Intent;
+
+
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+
+import android.provider.ContactsContract;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +27,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     RecyclerView recyclerView;
     DatabaseHelper dbHelper;
     List<Tasks> taskList;
@@ -53,12 +66,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_nav, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -90,10 +107,34 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//
+//        Fragment fragment = null;
+//        int id = item.getItemId();
+//
+//        if(id == R.id.nav_cal){
+//            fragment = new CalendarFragment();
+//        }
+//
+//
+//        if (fragment != null){
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction ft = fragmentManager.beginTransaction();
+//            ft.replace(R.id.flcontent,fragment);
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout)findViewById(R.id.mainnav);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
+
     public void activityTask(View view) {
         Intent intent = new Intent(MainActivity.this, TaskActivity.class);
         startActivity(intent);
     }
+
 }
 
 

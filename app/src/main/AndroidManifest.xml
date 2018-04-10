@@ -38,7 +38,7 @@
             android:name=".FinishedStudyScreen"
             android:exported="true"
             android:label="@string/title_activity_finished_study_screen" />
-        <activity android:name=".TaskActivity"></activity>
+        <activity android:name=".TaskActivity" />
     </application>
 
 </manifest>

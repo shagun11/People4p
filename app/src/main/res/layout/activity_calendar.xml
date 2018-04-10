@@ -5,33 +5,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/graylight"
+    android:background="#ee7ca3"
     android:orientation="vertical"
-    tools:context="com.example.people4p.MainActivity">
+    tools:context="com.example.people4p.calendarActivity">
+
+
+    <Button
+        android:id="@+id/addEvent"
+        android:layout_width="80dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="130dp"
+        android:background="@color/colorPrimaryDark"
+        android:ellipsize="middle"
+        android:text="Add Event"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:onClick="changeScreen"/>
 
     <TextView
         android:id="@+id/myDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
         android:text="Calendar"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="23sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:background="@color/graylight"
         android:layout_marginTop="48dp"
-        android:layout_marginLeft="44dp"
+        android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content">
 
         <CalendarView
             android:id="@+id/calendarView"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
             android:layout_height="320dp"
+            android:background="@color/graylight"
             android:focusedMonthDateColor="@color/startblue"
             android:selectedWeekBackgroundColor="@color/startblue"
             android:weekNumberColor="@color/startblue">
@@ -40,16 +57,16 @@
 
     </LinearLayout>
 
-    <!--<Button-->
-        <!--android:background="@color/startblue"-->
-        <!--android:text="Save My Task"-->
-        <!--android:textAlignment="center"-->
-        <!--android:layout_marginTop="34dp"-->
-        <!--android:layout_marginLeft="120dp"-->
-        <!--android:textColor="#FFF"-->
-        <!--android:paddingLeft="20dp"-->
-        <!--android:paddingRight="20dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="58dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:ellipsize="middle"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:onClick="getBack"/>
 
 </LinearLayout>

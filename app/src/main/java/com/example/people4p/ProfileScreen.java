@@ -34,4 +34,10 @@ public class ProfileScreen extends AppCompatActivity {
 //        Intent intent = new Intent(this, ProfileEdit.class);
 //        startActivity(intent);
     }
+
+    public void backToMainScreen(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+    }
 }
