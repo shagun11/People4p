@@ -11,10 +11,10 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
         style="@style/HeaderBar"
-        android:elevation="4dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:elevation="4dp" />
         <!--app:theme="@style/ActionBarThemeOverlay"-->
         <!--app:popupTheme="@style/ActionBarPopupThemeOverlay"-->
 
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/profile_pic"
             app:srcCompat="@drawable/leo" />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="Leonardo Dicaprio"
+            android:text="@string/leonardo_dicaprio"
             android:textColor="#fff"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -81,6 +81,6 @@
             android:src="@drawable/ic_add_circle"
             android:elevation="3dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </LinearLayout>
