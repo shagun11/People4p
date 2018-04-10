@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.people4p">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,24 +14,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"/>
         <activity
             android:name=".StudyActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:name=".MakeAssignmentActivity"
+            android:exported="true" />
+
+
         <activity android:name=".SignupActivity" />
         <activity android:name=".ProfileEdit" />
-        <!-- <activity android:name=".SignupActivity"/> -->
+        <activity android:name=".calendarActivity" />
         <activity android:name=".BreakActivity" />
         <activity android:name=".ProfileScreen" />
+        <activity android:name=".NavigationActivity"/>
+        <activity
+            android:name=".FinishedStudyScreen"
+            android:label="@string/title_activity_finished_study_screen"
+            android:exported="true"/>
     </application>
 
 </manifest>
