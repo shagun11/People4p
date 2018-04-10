@@ -36,14 +36,11 @@
         <!-- <activity android:name=".SignupActivity"/> -->
         <activity android:name=".BreakActivity" />
         <activity android:name=".ProfileScreen" />
-        <activity android:name=".NavigationActivity"></activity>
-            android:label="@string/title_activity_login" />
-        <activity android:name=".SignupActivity" />
+        <activity android:name=".NavigationActivity"/>
         <activity
             android:name=".FinishedStudyScreen"
             android:label="@string/title_activity_finished_study_screen"
             android:exported="true"/>
-        <activity android:name=".BreakActivity" />
     </application>
 
 </manifest>

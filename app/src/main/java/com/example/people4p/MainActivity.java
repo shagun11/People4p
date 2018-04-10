@@ -1,6 +1,7 @@
 package com.example.people4p;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(mTopToolbar);
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -70,15 +69,23 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        Intent intent = null;
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_study) {
             Toast.makeText(MainActivity.this, "Study Action clicked", Toast.LENGTH_LONG).show();
+            intent = new Intent(this, StudyActivity.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.nav_profile){
             Toast.makeText(MainActivity.this, "Profile Screen clicked", Toast.LENGTH_LONG).show();
+            intent = new Intent(this, ProfileScreen.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.nav_cal) {
             Toast.makeText(MainActivity.this, "Calendar Action clicked", Toast.LENGTH_LONG).show();
+            intent = new Intent(this, calendarActivity.class);
+            startActivity(intent);
             return true;
         }
 
