@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/main_screen"
     tools:context="com.example.people4p.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        style="@style/HeaderBar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:elevation="4dp" />
+        <!--app:theme="@style/ActionBarThemeOverlay"-->
+        <!--app:popupTheme="@style/ActionBarPopupThemeOverlay"-->
+
+
+    <LinearLayout
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/gradient"
+        android:elevation="2dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/profile_pic"
+            app:srcCompat="@drawable/leo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/leonardo_dicaprio"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,16 +74,14 @@
 
         </ScrollView>
 
-    <it.sephiroth.android.library.bottomnavigation.BottomNavigation
-        android:id="@+id/BottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        app:bbn_entries="@menu/main_menu"
-        app:bbn_scrollEnabled="true"
-        app:layout_behavior="@string/bbn_phone_view_behavior" />
-
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_circle"
+            android:elevation="3dp"
+            android:onClick="activityTask"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </LinearLayout>
